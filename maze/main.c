@@ -15,12 +15,25 @@
 void print_maze(int maze[SIZE][SIZE]){
     for(int i=0;i<SIZE;i++){
         for(int j=0;j<SIZE;j++){
-            printf("%2d",maze[i][j]);
+            if(maze[i][j]!=-1){
+                printf("%2d",maze[i][j]);
+            }else{
+                printf(" *");
+            }
         }
         printf("\n");
     }
 }
 
+void find_start_position(int maze[SIZE][SIZE]){
+    for(int i=0;i<SIZE;i++){
+        for(int j=0;j<SIZE;j++){
+            if(maze[i][j] == 1){
+                printf("start position : %2d, %2d\n",i,j);
+            }
+        }
+    }
+}
 int main(void) {
     
     /* initialize maze */
@@ -39,6 +52,9 @@ int main(void) {
 
     /* print maze */
     print_maze(maze);
+    
+    /* start position number */
+    find_start_position(maze);
     
     return 0;
 }
