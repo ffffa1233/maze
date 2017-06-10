@@ -34,6 +34,18 @@ void find_start_position(int maze[SIZE][SIZE]){
         }
     }
 }
+
+void find_end_position(int maze[SIZE][SIZE]){
+    for(int i=0;i<SIZE;i++){
+        for(int j=0;j<SIZE;j++){
+            if(maze[i][j] == 2){
+                printf("end position : %2d, %2d\n",i,j);
+            }
+        }
+    }
+}
+
+
 int main(void) {
     
     /* initialize maze */
@@ -55,6 +67,9 @@ int main(void) {
     
     /* start position number */
     find_start_position(maze);
+    
+    /* end position number */
+    find_end_position(maze);
     
     return 0;
 }
