@@ -51,6 +51,10 @@ void free_maze(int** maze, int row){
     free(maze);
 }
 
+void find_end_position(int **maze, int col){
+    
+}
+
 int main(void) {
     /* show what this program is */
     printf("*** finding path of maze ***\n");
