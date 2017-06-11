@@ -36,6 +36,7 @@ void find_start_position(int maze[SIZE][SIZE]){
 }
 
 void find_end_position(int maze[SIZE][SIZE]){
+    printf("this function find end position number\n");
     for(int i=0;i<SIZE;i++){
         for(int j=0;j<SIZE;j++){
             if(maze[i][j] == 2){
