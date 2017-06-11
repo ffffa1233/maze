@@ -11,6 +11,11 @@
 #include <string.h>
 #include <time.h>
 
+typedef struct position{
+    int x;
+    int y;
+}Position;
+
 void print_maze(int** maze, int row, int col){
     for(int i=0;i<row;i++){
         for(int j=0;j<col;j++){
@@ -51,15 +56,27 @@ void free_maze(int** maze, int row){
     free(maze);
 }
 
+void find_start_position(int** maze, Position *start, int col){
+    int i;
+    for(i=0;i<col;i++){
+        if(maze[0][i]== 1){
+            start->x = 0;
+            start->y = i;
+            printf("start position : [%d, %d]\n",start->x, start->y);
+            return;
+        }
+    }
+}
+
 int main(void) {
     /* show what this program is */
     printf("*** finding path of maze ***\n");
     
     /* declare random function and variable */
     srand((unsigned)time(NULL));
-    int row = 0;
-    int col = 0;
+    int row = 0, col = 0;
     int **maze;
+    Position start;
     
     /* input row and column number */
     input_data(&row, &col);
@@ -69,6 +86,9 @@ int main(void) {
     
     /* print maze */
     print_maze(maze, row, col);
+    
+    /* find start position */
+    find_start_position(maze, &start, col);
     
     /* find path */
     find_path(maze, row, col);
