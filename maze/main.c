@@ -52,7 +52,10 @@ void free_maze(int** maze, int row){
 }
 
 void find_end_position(int **maze, int col){
-    
+    int i;
+    for(int i=0;i<col;i++){
+        
+    }
 }
 
 int main(void) {
