@@ -49,6 +49,7 @@ void free_maze(int** maze, int row){
         free(maze[i]);
     }
     free(maze);
+    printf("End free\n");
 }
 
 int main(void) {
