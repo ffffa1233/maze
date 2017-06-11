@@ -66,6 +66,10 @@ void find_start_position(int** maze, Position *start, int col){
             return;
         }
     }
+    if(i==col){
+        printf("there is no start position\n");
+        return;
+    }
 }
 
 int main(void) {
