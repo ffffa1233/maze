@@ -73,6 +73,13 @@ void find_start_position(int** maze, Position *start, int col){
     }
 }
 
+void find_end_position(int **maze, int col){
+    int i;
+    for(int i=0;i<col;i++){
+        
+    }
+}
+
 int main(void) {
     /* show what this program is */
     printf("*** finding path of maze ***\n");
